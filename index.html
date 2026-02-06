@@ -12,8 +12,9 @@
         @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
         .rocket { position: fixed; font-size: 2.5rem; pointer-events: none; animation: fly 20s linear infinite; z-index: 1; }
         @keyframes fly { 0% { transform: translate(-100px, 100vh) rotate(45deg); } 100% { transform: translate(110vw, -100px) rotate(45deg); } }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.4s ease; }
+        .glass:hover { border-color: #3b82f6; transform: translateY(-5px); }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.96); z-index: 100; align-items: center; justify-content: center; backdrop-filter: blur(15px); }
         .gradient-text { background: linear-gradient(to right, #60a5fa, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
@@ -23,108 +24,113 @@
 
     <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto relative z-10">
         <div class="text-3xl font-900 italic uppercase tracking-tighter">Enjoying<span class="text-blue-500">.</span></div>
-        <div class="text-[10px] font-bold tracking-[0.2em] text-blue-400">SERVER: ONLINE</div>
+        <div class="px-4 py-1 rounded-full border border-green-500/30 bg-green-500/10 text-[10px] font-bold text-green-400 tracking-widest uppercase">Server Live</div>
     </nav>
 
     <header class="text-center py-16 px-6 relative z-10">
-        <h1 class="text-6xl md:text-8xl font-900 mb-8 italic uppercase leading-tight tracking-tighter">
+        <h1 class="text-7xl md:text-8xl font-900 mb-8 italic uppercase leading-none tracking-tighter">
             Elite Arcade.<br><span class="gradient-text">Star Rewards.</span>
         </h1>
-        <a href="https://bit.ly/YOUR_LINK" class="bg-white text-black px-12 py-5 rounded-2xl font-black text-xl hover:scale-105 transition inline-block uppercase shadow-2xl">
+        <a href="enjoying_v1.apk" class="bg-white text-black px-14 py-5 rounded-2xl font-black text-xl hover:bg-blue-500 hover:text-white transition-all duration-300 inline-block uppercase shadow-[0_0_40px_rgba(255,255,255,0.2)]">
             Download APK
         </a>
     </header>
 
-    <section class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 pb-20 relative z-10">
+    <section class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 pb-24 relative z-10">
         <div class="glass p-8 rounded-[2.5rem] text-center">
             <div class="text-4xl mb-4">🏎️</div>
             <h3 class="font-900 uppercase italic">Turbo Racer</h3>
-            <p class="text-blue-400 font-bold text-xs mt-2 uppercase tracking-widest">40 Coins</p>
+            <p class="text-blue-400 font-bold text-xs mt-2 tracking-widest uppercase">40 Coins</p>
         </div>
         <div class="glass p-8 rounded-[2.5rem] text-center">
             <div class="text-4xl mb-4">🏃</div>
             <h3 class="font-900 uppercase italic">Subway Run</h3>
-            <p class="text-blue-400 font-bold text-xs mt-2 uppercase tracking-widest">15 Coins</p>
+            <p class="text-blue-400 font-bold text-xs mt-2 tracking-widest uppercase">15 Coins</p>
         </div>
         <div class="glass p-8 rounded-[2.5rem] text-center">
             <div class="text-4xl mb-4">⚪</div>
             <h3 class="font-900 uppercase italic">Carrom King</h3>
-            <p class="text-blue-400 font-bold text-xs mt-2 uppercase tracking-widest">20 Coins</p>
+            <p class="text-blue-400 font-bold text-xs mt-2 tracking-widest uppercase">20 Coins</p>
         </div>
         <div class="glass p-8 rounded-[2.5rem] text-center">
             <div class="text-4xl mb-4">🎲</div>
             <h3 class="font-900 uppercase italic">Ludo Pro</h3>
-            <p class="text-blue-400 font-bold text-xs mt-2 uppercase tracking-widest">20 Coins</p>
+            <p class="text-blue-400 font-bold text-xs mt-2 tracking-widest uppercase">20 Coins</p>
         </div>
     </section>
 
-    <section class="max-w-5xl mx-auto px-6 mb-20 relative z-10">
-        <div class="glass p-12 rounded-[3.5rem] text-center border-white/10">
-            <h2 class="text-4xl font-900 mb-12 italic uppercase gradient-text">The Vault</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="flex flex-col items-center">
-                    <svg class="h-12 mb-4" viewBox="0 0 24 24" fill="#FF9900" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 16.5c-1.3 1.05-3.41 1.5-5.51 1.5-3.1 0-5.81-1.2-7.71-3-.2-.21-.4 0-.3.2 1.9 2.51 5.01 4.1 8.51 4.1 2.4 0 4.81-.8 6.51-2.2.3-.3 0-.7-.5-.6zM19.82 15c-.4-.5-1.51-.4-2.11-.3-.2 0-.2-.2 0-.3 1.01-1.01 2.61-.71 3.01.1.3.7-.1 1.91-1.1 2.61-.21.1-.3 0-.3-.2.1-.6.1-1.61-.5-1.91z"/></svg>
-                    <span class="font-black text-xs uppercase tracking-widest">Amazon Card</span>
+    <section class="max-w-5xl mx-auto px-6 mb-24 relative z-10">
+        <div class="glass p-12 rounded-[4rem] text-center">
+            <h2 class="text-4xl font-900 mb-14 italic uppercase gradient-text">The Vault</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="flex flex-col items-center group">
+                    <svg class="h-14 mb-4 transition group-hover:scale-110" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.93 17.1c-2.58 1.95-6.84 2.82-10.12 2.82-4.7 0-8.91-1.84-11.72-4.74-.29-.31-.05-.66.32-.45 3.51 2.02 7.84 3.23 12.61 3.23 3.38 0 7.15-.81 10-2.34.46-.25.86.19.41.52l-.5.96zm3.36-2.58c-.5-.73-2.07-.63-2.88-.47-.28.05-.33-.2-.07-.38 1.48-1.04 3.86-.77 4.41.13.56.91-.12 2.59-1.52 3.63-.26.2-.44.02-.38-.25.14-.62.22-1.63-.56-2.66z" fill="#FF9900"/>
+                        <path d="M13.43 4.2c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="#FF9900" opacity=".2"/>
+                    </svg>
+                    <span class="font-black text-[10px] tracking-[0.3em] uppercase opacity-70">Amazon</span>
                 </div>
-                <div class="flex flex-col items-center">
-                    <svg class="h-12 mb-4" viewBox="0 0 24 24" fill="#2874F0" xmlns="http://www.w3.org/2000/svg"><path d="M15.32 2.405H4.887a3 3 0 0 0-3 3v13.19a3 3 0 0 0 3 3h14.226a3 3 0 0 0 3-3V5.405a3 3 0 0 0-3-3H15.32z"/></svg>
-                    <span class="font-black text-xs uppercase tracking-widest text-blue-400">Flipkart Card</span>
+                <div class="flex flex-col items-center group">
+                    <svg class="h-14 mb-4 transition group-hover:scale-110" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-9 15.5l-3.5-3.5 1.42-1.42L11 14.67l4.58-4.59 1.42 1.42L11 17.5z" fill="#2874F0"/>
+                    </svg>
+                    <span class="font-black text-[10px] tracking-[0.3em] uppercase text-blue-400">Flipkart</span>
                 </div>
-                <div class="flex flex-col items-center">
-                    <svg class="h-12 mb-4" viewBox="0 0 24 24" fill="#34A853" xmlns="http://www.w3.org/2000/svg"><path d="M3.2 2.2c-.2.2-.3.5-.3.9v17.8c0 .4.1.7.3.9l.1.1L13.4 12v-.1L3.3 2.1l-.1.1z"/></svg>
-                    <span class="font-black text-xs uppercase tracking-widest">Play Store Code</span>
+                <div class="flex flex-col items-center group">
+                    <svg class="h-14 mb-4 transition group-hover:scale-110" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.25 0 .48.06.69.17l14.44 8.25c.66.38.66 1.32 0 1.7l-14.44 8.25c-.21.11-.44.17-.69.17-.83 0-1.5-.67-1.5-1.5z" fill="#34A853"/>
+                    </svg>
+                    <span class="font-black text-[10px] tracking-[0.3em] uppercase opacity-70">Play Store</span>
                 </div>
             </div>
-            <p class="mt-12 text-[10px] text-gray-500 font-bold border-t border-white/10 pt-8 uppercase tracking-[0.4em]">100 Coins = 1 Asset Value</p>
+            <p class="mt-14 text-[9px] text-gray-600 font-bold border-t border-white/5 pt-8 uppercase tracking-[0.5em]">Automated Security System v2.0</p>
         </div>
     </section>
 
-    <footer class="text-center py-10 border-t border-white/5 relative z-10">
-        <div class="flex justify-center gap-10 mb-6 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-            <button onclick="showModal('m1')" class="hover:text-blue-400 transition">Privacy Policy</button>
-            <button onclick="showModal('m2')" class="hover:text-blue-400 transition">Terms of Service</button>
+    <footer class="text-center py-12 border-t border-white/5 relative z-10">
+        <div class="flex justify-center gap-10 mb-6 text-[10px] font-black text-gray-500 uppercase tracking-widest">
+            <button onclick="showM('m1')" class="hover:text-blue-400 transition">Privacy Policy</button>
+            <button onclick="showM('m2')" class="hover:text-blue-400 transition">Terms of Service</button>
         </div>
-        <p class="text-[9px] text-gray-800 font-black italic tracking-widest">ENJOYING ARCADE © 2026</p>
+        <p class="text-[9px] text-gray-800 font-black italic tracking-[0.4em]">ENJOYING ARCADE © 2026</p>
     </footer>
 
     <div id="m1" class="modal" onclick="this.style.display='none'">
-        <div class="glass p-10 rounded-[2.5rem] max-w-sm m-6 border-white/20" onclick="event.stopPropagation()">
-            <h2 class="font-900 italic uppercase mb-6 text-xl tracking-tighter">Privacy Protocol</h2>
+        <div class="glass p-10 rounded-[3rem] max-w-sm m-6 border-white/20" onclick="event.stopPropagation()">
+            <h2 class="font-900 italic uppercase mb-6 text-xl gradient-text">Privacy Protocol</h2>
             <div class="text-[11px] text-gray-400 leading-relaxed space-y-4">
-                <p>• <b>Identity:</b> We utilize unique device identifiers to enforce a strict 2-account per hardware limit.</p>
-                <p>• <b>Storage:</b> User progress and virtual assets are synced via 256-bit encrypted cloud storage.</p>
-                <p>• <b>Safety:</b> No personal data is harvested or shared with external advertising agencies.</p>
+                <p>• <b>Encryption:</b> All user assets are protected by 256-bit AES cloud encryption.</p>
+                <p>• <b>Hardware:</b> We collect Device IDs purely to prevent multi-account farming.</p>
+                <p>• <b>Third-Parties:</b> We have a zero-share policy. Your data is never exported.</p>
             </div>
-            <button onclick="this.parentElement.parentElement.style.display='none'" class="mt-8 text-blue-400 text-[10px] font-bold uppercase underline tracking-widest">Close</button>
+            <button onclick="this.parentElement.parentElement.style.display='none'" class="mt-8 text-blue-400 text-[10px] font-black uppercase underline tracking-widest">Close</button>
         </div>
     </div>
 
     <div id="m2" class="modal" onclick="this.style.display='none'">
-        <div class="glass p-10 rounded-[2.5rem] max-w-sm m-6 border-white/20" onclick="event.stopPropagation()">
-            <h2 class="font-900 italic uppercase mb-6 text-xl tracking-tighter">Terms of Service</h2>
+        <div class="glass p-10 rounded-[3rem] max-w-sm m-6 border-white/20" onclick="event.stopPropagation()">
+            <h2 class="font-900 italic uppercase mb-6 text-xl gradient-text">Terms of Service</h2>
             <div class="text-[11px] text-gray-400 leading-relaxed space-y-4">
-                <p>• <b>Usage:</b> Any attempt to use bots, automated scripts, or macro clickers results in an instant ban.</p>
-                <p>• <b>Redemption:</b> Gift cards are digital and take 24-48 business hours to verify and deliver.</p>
-                <p>• <b>Ownership:</b> Virtual coins have no real-world cash value and are restricted to in-app trades.</p>
+                <p>• <b>Anti-Cheat:</b> Use of macros or automated play results in a permanent vault ban.</p>
+                <p>• <b>Delivery:</b> Digital assets are verified and released within 48 business hours.</p>
+                <p>• <b>Eligibility:</b> Users must maintain an active standing to redeem higher-tier rewards.</p>
             </div>
-            <button onclick="this.parentElement.parentElement.style.display='none'" class="mt-8 text-blue-400 text-[10px] font-bold uppercase underline tracking-widest">Close</button>
+            <button onclick="this.parentElement.parentElement.style.display='none'" class="mt-8 text-blue-400 text-[10px] font-black uppercase underline tracking-widest">Accept</button>
         </div>
     </div>
 
     <script>
-        // Galaxy Star Generator
         const field = document.getElementById('star-field');
-        for(let i=0; i<65; i++) {
+        for(let i=0; i<70; i++) {
             const s = document.createElement('div');
             s.className = 'star';
             s.style.top = Math.random()*100+'%';
             s.style.left = Math.random()*100+'%';
-            s.style.width = s.style.height = Math.random()*3+'px';
+            s.style.width = s.style.height = (Math.random()*2+1)+'px';
             s.style.animationDelay = Math.random()*5+'s';
             field.appendChild(s);
         }
-        function showModal(id) { document.getElementById(id).style.display = 'flex'; }
+        function showM(id) { document.getElementById(id).style.display = 'flex'; }
     </script>
 </body>
 </html>
-
